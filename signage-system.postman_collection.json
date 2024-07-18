@@ -51,7 +51,7 @@
 				"auth": {
 					"type": "bearer",
 					"bearer": {
-						"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImRAZS5jb20iLCJpZCI6IjVmMTNhMDJmLWY1NjMtNGE4YS1hNjc2LTJkZmYxNTg0MTg2NyJ9.OwuCJEUpGn2HNX90PQH-18umuDK6jwITxdIsNNmxa6A"
+						"token": ""
 					}
 				},
 				"method": "GET",
@@ -75,7 +75,7 @@
 				"auth": {
 					"type": "bearer",
 					"bearer": {
-						"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImRAZS5jb20iLCJpZCI6IjVmMTNhMDJmLWY1NjMtNGE4YS1hNjc2LTJkZmYxNTg0MTg2NyJ9.OwuCJEUpGn2HNX90PQH-18umuDK6jwITxdIsNNmxa6A"
+						"token": ""
 					}
 				},
 				"method": "POST",
