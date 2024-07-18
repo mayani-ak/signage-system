@@ -63,6 +63,7 @@ This repository facilitates backend of the system, which is implemented in Go, a
      ```json
      {
        "username": "your-username",
+       "email": "your-email",
        "password": "your-password"
      }
      ```
@@ -79,7 +80,7 @@ This repository facilitates backend of the system, which is implemented in Go, a
    - **Request Body**:
      ```json
      {
-       "username": "your-username",
+       "email": "your-email",
        "password": "your-password"
      }
      ```
