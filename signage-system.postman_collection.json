@@ -1,0 +1,97 @@
+{
+	"info": {
+		"_postman_id": "ce30e9c8-9110-47dd-95ad-1077dc4002ba",
+		"name": "signage-system",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "33992237"
+	},
+	"item": [
+		{
+			"name": "signup",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": " {      \"username\": \"Archana\",\n        \"email\": \"d@e.com\",\n        \"password\": \"password\"\n      }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:8080/signup"
+			},
+			"response": []
+		},
+		{
+			"name": "login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": " {      \"username\": \"Archana\",\n        \"email\": \"d@e.com\",\n        \"password\": \"password\"\n      }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:8080/login"
+			},
+			"response": []
+		},
+		{
+			"name": "content",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": {
+						"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImRAZS5jb20iLCJpZCI6IjVmMTNhMDJmLWY1NjMtNGE4YS1hNjc2LTJkZmYxNTg0MTg2NyJ9.OwuCJEUpGn2HNX90PQH-18umuDK6jwITxdIsNNmxa6A"
+					}
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:8080/restricted/content"
+			},
+			"response": []
+		},
+		{
+			"name": "update",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": {
+						"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImRAZS5jb20iLCJpZCI6IjVmMTNhMDJmLWY1NjMtNGE4YS1hNjc2LTJkZmYxNTg0MTg2NyJ9.OwuCJEUpGn2HNX90PQH-18umuDK6jwITxdIsNNmxa6A"
+					}
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:8080/restricted/update"
+			},
+			"response": []
+		}
+	]
+}

@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{{ .title }}</title>
+</head>
+<body>
+<h1>Digital Signage</h1>
+<div id="content"></div>
+
+<script>
+    async function fetchContent() {
+        const response = await fetch('/content');
+        const data = await response.json();
+        document.getElementById('content').innerHTML = JSON.stringify(data, null, 2);
+    }
+    fetchContent();
+</script>
+</body>
+</html>
