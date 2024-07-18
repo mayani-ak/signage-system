@@ -12,6 +12,8 @@ import (
 
 var envBearerToken = os.Getenv("TWITTER_BEARER_TOKEN")
 
+// TODO Fix : Twitter APIs are throwing 403. Huh!
+
 // fetchWOEID fetches the Where On Earth IDentifier (WOEID) for a given location name.
 // This WOEID is used to identify the location for which to fetch trending topics on Twitter.
 func fetchWOEID(token, locationName string) (models.WOEIDLocation, error) {
