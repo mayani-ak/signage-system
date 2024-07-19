@@ -3,6 +3,7 @@ package main
 import (
 	"github.com/labstack/echo/v4"
 	"github.com/labstack/echo/v4/middleware"
+	"net/http"
 	"signage-system/firestore"
 	"signage-system/handlers"
 	mdwr "signage-system/middleware"
@@ -19,6 +20,12 @@ func main() {
 	// Middleware
 	e.Use(middleware.Logger())  // Log HTTP requests
 	e.Use(middleware.Recover()) // Recover from panics gracefully
+	e.Use(middleware.CORSWithConfig(middleware.CORSConfig{
+		AllowOrigins:     []string{"localhost:8081", "https://localhost:8081", "http://localhost:8081"},
+		AllowHeaders:     []string{echo.HeaderOrigin, echo.HeaderContentType, echo.HeaderAccept},
+		AllowMethods:     []string{http.MethodGet, http.MethodHead, http.MethodPut, http.MethodPatch, http.MethodPost, http.MethodDelete},
+		AllowCredentials: true,
+	}))
 
 	// Register the template renderer for HTML views
 	e.Renderer = views.NewTemplate()
