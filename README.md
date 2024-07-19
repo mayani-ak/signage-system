@@ -20,8 +20,8 @@ This repository facilitates backend of the system, which is implemented in Go, a
 
 2. **Set Up Firestore:**
     - Create a project in the [Firebase Console](https://console.firebase.google.com/).
-    - Create a Firestore database and add a collection 'users'
-    - Download the service account key JSON file and place it in the backend directory.
+    - Create a Firestore database
+    - Copy Project Id to set in env variable
 
 3. **Install Go Dependencies:**
 
