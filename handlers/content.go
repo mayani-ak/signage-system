@@ -22,28 +22,29 @@ func UpdateContent(c echo.Context) error {
 	if err != nil {
 		return c.JSON(http.StatusInternalServerError, err.Error())
 	}
+	/*
+		// Fetch trending topics for the specified location
+		trendingTopics, err := external.FetchTrendingTopics(location)
+		if err != nil {
+			return c.JSON(http.StatusInternalServerError, err.Error())
+		}
 
-	// Fetch trending topics for the specified location
-	trendingTopics, err := external.FetchTrendingTopics(location)
-	if err != nil {
-		return c.JSON(http.StatusInternalServerError, err.Error())
-	}
+		// Check if there are any trending topics
+		if len(trendingTopics) == 0 {
+			return c.JSON(http.StatusInternalServerError, "No trending topics found")
+		}
 
-	// Check if there are any trending topics
-	if len(trendingTopics) == 0 {
-		return c.JSON(http.StatusInternalServerError, "No trending topics found")
-	}
+		// Fetch tweets for the most trending topic
+		tweets, err := external.FetchTweetsForTopic(trendingTopics[0].Name)
+		if err != nil {
+			return c.JSON(http.StatusInternalServerError, err.Error())
+		}
 
-	// Fetch tweets for the most trending topic
-	tweets, err := external.FetchTweetsForTopic(trendingTopics[0].Name)
-	if err != nil {
-		return c.JSON(http.StatusInternalServerError, err.Error())
-	}
-
-	// Check if there are any tweets
-	if len(tweets) == 0 {
-		return c.JSON(http.StatusInternalServerError, "No tweets found for trending topic")
-	}
+		// Check if there are any tweets
+		if len(tweets) == 0 {
+			return c.JSON(http.StatusInternalServerError, "No tweets found for trending topic")
+		}
+	*/
 
 	// Create content struct with fetched data
 	content := models.Content{
@@ -51,7 +52,7 @@ func UpdateContent(c echo.Context) error {
 		CreatedTime: time.Now().Unix(),
 		Location:    location,
 		Weather:     fmt.Sprintf("%0.1f°C, %s", weather.Current.Temperature, weather.Current.Condition.Text),
-		SocialMedia: tweets[0].Text, // Assuming you want the first tweet from the most trending topic
+		//	SocialMedia: tweets[0].Text, // Assuming we want the first tweet from the most trending topic
 	}
 
 	// Add the new content to the Firestore collection

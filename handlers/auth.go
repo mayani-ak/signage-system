@@ -4,6 +4,7 @@ import (
 	"context"
 	"github.com/golang-jwt/jwt"
 	"github.com/google/uuid"
+	"log"
 	"net/http"
 	"os"
 	"signage-system/firestore"
@@ -25,7 +26,7 @@ func Signup(c echo.Context) error {
 	}
 
 	// Check if the email and password are provided
-	if user.Email == "" || user.Password == "" || user.UserName == "" {
+	if user.Email == "" || user.Password == "" {
 		return c.JSON(http.StatusBadRequest, "Email, password and user name are required")
 	}
 
@@ -43,7 +44,9 @@ func Signup(c echo.Context) error {
 	// Add the user data to the Firestore collection
 	_, _, err = firestore.Client.Collection("users").Add(context.Background(), user)
 	if err != nil {
-		return c.JSON(http.StatusInternalServerError, err.Error())
+		log.Printf("Make sure GOOGLE_CLOUD_PROJECT env variable is set with correct value.")
+		log.Printf(err.Error())
+		return c.JSON(http.StatusInternalServerError, "Error connecting to database. Please try again later.")
 	}
 
 	// removing password from response
